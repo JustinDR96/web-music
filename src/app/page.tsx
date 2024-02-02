@@ -1,5 +1,5 @@
 import React from "react";
-import Categories from "./components/categories/categories";
+import Categories from "../components/categories/categories";
 export default function home() {
   return (
     <div className="home">

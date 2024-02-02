@@ -2,7 +2,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import useAccessToken from "@/app/utils/useAccessToken";
+import useAccessToken from "@/utils/useAccessToken";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
