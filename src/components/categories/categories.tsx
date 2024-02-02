@@ -73,7 +73,7 @@ export default function Categories() {
         <Slider {...settings}>
           {(categories as Array<any>).map((category) => (
             <div className="categorie-item" key={category.id}>
-              <a href={category.href}>{category.name} test</a>
+              <a href={category.href}>{category.name}</a>
               <img src={category.icons[0].url} alt={category.name} />
             </div>
           ))}
