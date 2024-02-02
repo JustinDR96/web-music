@@ -1,8 +1,14 @@
 "use client";
 import React, { useState } from "react";
+import SignIn from "../AuthBtn/AuthBtn";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  const toggleVisible = () => {
+    setIsVisible(!isVisible);
+  };
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -38,7 +44,7 @@ export default function Header() {
 
       <div className="header-title">Cyber Groove</div>
 
-      <div className="user-icon">
+      <div className="user-icon" onClick={toggleVisible}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="24"
@@ -65,6 +71,8 @@ export default function Header() {
           </ul>
         </div>
       )}
+
+      {isVisible && <SignIn />}
     </div>
   );
 }

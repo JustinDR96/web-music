@@ -4,16 +4,14 @@
   justify-content: space-between;
   align-items: center;
   padding: 5px;
-  /* From https://css.glass */
-  background: transparent;
-  border-radius: 16px;
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(8.8px);
+  border-radius: 20px;
+  box-shadow: var(--box-shadow);
+  margin: 1rem 5px;
   position: sticky;
   top: 0;
-  margin-bottom: 1rem;
+  left: 0;
+  z-index: 10000;
 }
-
 .header-title {
   font-size: 30px;
   font-family: "SD Dystopian", sans-serif;
@@ -36,10 +34,11 @@ button {
   position: absolute;
   max-width: 320px;
   height: 80vh;
-  top: (105px);
+  top: (110px);
   right: 0;
   left: 0;
   bottom: 0;
   border-radius: 20px;
   background: var(--body-bg);
+  box-shadow: var(--box-shadow);
 }

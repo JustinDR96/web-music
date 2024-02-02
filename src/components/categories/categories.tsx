@@ -3,9 +3,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import useAccessToken from "@/utils/useAccessToken";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 export default function Categories() {
   const { accessToken } = useAccessToken();
@@ -31,53 +30,42 @@ export default function Categories() {
     fetchCategories();
   }, [accessToken]);
 
-  var settings = {
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 6,
-    slidesToScroll: 4,
-    variableWidth: true,
-    arrows: false,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    pauseOnHover: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 4,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-
   return (
     <div className="categories">
-      categorie component
       {categories && (
-        <Slider {...settings}>
+        <Swiper
+          loop={true}
+          onSwiper={(swiper) => console.log(swiper)}
+          breakpoints={{
+            320: {
+              slidesPerView: 1.5,
+            },
+            480: {
+              slidesPerView: 2.5,
+            },
+            640: {
+              slidesPerView: 3.5,
+            },
+            768: {
+              slidesPerView: 4.5,
+            },
+            1024: {
+              slidesPerView: 5.5,
+            },
+            1440: {
+              slidesPerView: 6.5,
+            },
+          }}
+        >
           {(categories as Array<any>).map((category) => (
-            <div className="categorie-item" key={category.id}>
-              <a href={category.href}>{category.name}</a>
-              <img src={category.icons[0].url} alt={category.name} />
-            </div>
+            <SwiperSlide key={category.id}>
+              <div className="categorie-item">
+                <a href={category.href}>{category.name}</a>
+                <img src={category.icons[0].url} alt={category.name} />
+              </div>
+            </SwiperSlide>
           ))}
-        </Slider>
+        </Swiper>
       )}
     </div>
   );
