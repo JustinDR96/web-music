@@ -1,0 +1,23 @@
+:root {
+  // Couleurs principales
+  --cyberpink: #ff79c6; // Rose néon
+  --cyberblue: #61dafb; // Bleu électrique
+  --cyberpurple: #bd93f9; // Violet cybernétique
+  --cybergreen: #50fa7b; // Vert fluo
+  --cyberyellow: #f1fa8c; // Jaune acide
+
+  // Couleurs de texte
+  --text-color: #ffffff; // Blanc pour le texte principal
+  --heading-color: var(--cyberpink); // Couleur de titre principale
+  --subtitle-color: var(--cyberblue); // Couleur de sous-titre
+
+  // Couleurs d'arrière-plan
+  --body-bg: #1e1e1e; // Arrière-plan sombre
+  --sidebar-bg: #44475a; // Arrière-plan de la barre latérale
+
+  // Autres couleurs
+  --accent-color: var(--cyberpurple); // Couleur d'accentuation
+  --link-color: var(--cyberblue); // Couleur des liens
+  --error-color: #ff5555; // Rouge pour les messages d'erreur
+  --success-color: #50fa7b; // Vert pour les messages de succès
+}
