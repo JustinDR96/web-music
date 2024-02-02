@@ -1,8 +1,8 @@
 import { GetServerSideProps } from "next";
-import { getSession, Session } from "next-auth/react";
+import { getSession, useSession } from "next-auth/react";
 
 interface WelcomeProps {
-  session: Session | null;
+  session: ReturnType<typeof useSession>[0] | null;
 }
 
 export default function Welcome({ session }: WelcomeProps) {
@@ -10,6 +10,8 @@ export default function Welcome({ session }: WelcomeProps) {
   if (session) {
     return <p>Bienvenue, {session.user.name}!</p>;
   } else {
+    // Vous devez retourner quelque chose ici aussi, par exemple :
+    return <p>Veuillez vous connecter.</p>;
   }
 }
 
