@@ -2,7 +2,7 @@
 // pages/index.js
 "use client";
 import { useEffect, useState } from "react";
-import useAccessToken from "../../utils/useAccessToken";
+import useAccessToken from "../utils/useAccessToken";
 
 type Artist = {
   external_urls: {
