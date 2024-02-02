@@ -1,17 +1,19 @@
 import { GetServerSideProps } from "next";
-import { getSession, useSession } from "next-auth/react";
+import { getSession } from "next-auth/react";
+import { Session } from "next-auth";
 
 interface WelcomeProps {
-  session: ReturnType<typeof useSession>[0] | null;
+  session: Session | null;
 }
 
 export default function Welcome({ session }: WelcomeProps) {
   console.log(session);
   if (session) {
-    return <p>Bienvenue, {session.user.name}!</p>;
+    return <p>Bienvenue, {session.user?.name ?? "Unknown User"}!</p>;
   } else {
-    // Vous devez retourner quelque chose ici aussi, par exemple :
-    return <p>Veuillez vous connecter.</p>;
+    {
+      ("");
+    }
   }
 }
 
