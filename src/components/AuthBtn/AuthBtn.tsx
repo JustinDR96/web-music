@@ -1,15 +1,12 @@
-import { signIn } from "next-auth/react";
+/* eslint-disable react/no-unescaped-entities */
+
+import Link from "next/link";
 
 export default function AuthBtn() {
   return (
-    <div className="signin">
-      <button
-        className="connect"
-        onClick={() =>
-          signIn("credentials", { username: "username", password: "password" })
-        }
-      >
-        Se connecter
+    <div className="authbtn">
+      <button className="connect">
+        <Link href="/auth/signin">Se connecter</Link>
       </button>
       <button className="register">S'inscrire</button>
       <button className="logout">Se deconnecter</button>

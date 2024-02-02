@@ -10,14 +10,14 @@ export default NextAuth({
         username: { label: "Username", type: "text" },
         password: { label: "Password", type: "password" },
       },
-      authorize: async (credentials: {
-        username: string;
-        password: string;
-      }) => {
-        // Ajoutez ici la logique pour vérifier les identifiants de l'utilisateur
-        // Vous pouvez par exemple vérifier les identifiants dans votre base de données PostgreSQL
-        // Si les identifiants sont valides, retournez un objet { id: user.id, name: user.name, email: user.email }
-        // Sinon, retournez null
+      authorize: async (credentials) => {
+        const user = { id: "1", name: "root", password: "root" };
+
+        if (user) {
+          return user;
+        } else {
+          return null;
+        }
       },
     }),
   ],

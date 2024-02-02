@@ -9,7 +9,12 @@
 @import "../components/header/header";
 @import "../components/categories/categories";
 @import "../components/AuthBtn/AuthBtn";
+
 // Importer les styles spécifiques aux pages
 @import "../pages/home/home";
+
+// importer les styles des pages de connexion
+@import "../pages/auth/signin.scss";
+
 // Importer les styles globaux
 @import "./App";
