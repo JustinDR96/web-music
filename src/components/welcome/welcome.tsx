@@ -1,16 +1,15 @@
-import { getSession } from "next-auth/react";
+import { useSession } from "next-auth/client";
 
-export async function getServerSideProps(context: any) {
-  const session = await getSession(context);
-  return {
-    props: { session },
-  };
-}
+export default function Welcome() {
+  const [session, loading] = useSession();
 
-export default function Welcome({ session }: { session: any }) {
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   if (session) {
-    return <p>Bienvenue, {session.user?.name ?? "Unknown User"}!</p>;
+    return <div>Bonjour {session.user.username}!</div>;
   } else {
-    return <p>Bienvenue, Visiteur!</p>;
+    return <div>Vous devez être connecté pour voir ces informations.</div>;
   }
 }

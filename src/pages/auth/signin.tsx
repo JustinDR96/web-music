@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { signIn } from "next-auth/react";
 import { useSession } from "next-auth/react";
+import Signup from "./signup";
 import "../../styles/main.scss";
 
 import { useEffect } from "react";
@@ -36,8 +37,13 @@ export default function SignIn() {
                 username,
                 password,
                 callbackUrl: "/",
-              });
-              console.log("bien connecté");
+              })
+                .then(() => {
+                  console.log("Connexion réussie");
+                })
+                .catch((error) => {
+                  console.log("Échec de la connexion", error);
+                });
             }}
           >
             <span className="title">Login</span>
@@ -63,34 +69,7 @@ export default function SignIn() {
               </label>
             </span>
           </form>
-          <form className="form">
-            <span className="title">Sign Up</span>
-            <div className="form_control">
-              <input type="text" className="input" name="username" required />
-              <label className="label">Username</label>
-            </div>
-            <div className="form_control">
-              <input type="email" className="input" name="email" required />
-              <label className="label">Email</label>
-            </div>
-            <div className="form_control">
-              <input
-                type="password"
-                className="input"
-                name="password"
-                required
-              />
-              <label className="label">Password</label>
-            </div>
-            <button>Sign Up</button>
-
-            <span className="bottom_text">
-              Already have an account?
-              <label htmlFor="register_toggle" className="switch">
-                Sign In
-              </label>
-            </span>
-          </form>
+          <Signup />
         </div>
       </div>
     </div>
