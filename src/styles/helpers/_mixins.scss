@@ -51,19 +51,19 @@ $desktop: 1200px;
 }
 
 @mixin tablet {
-  @media only screen and (min-width: $mobile + 1px) and (max-width: $tablet) {
+  @media only screen and (min-width: ($mobile + 1px)) and (max-width: $tablet) {
     @content;
   }
 }
 
 @mixin large {
-  @media only screen and (min-width: $tablet + 1px) and (max-width: $large) {
+  @media only screen and (min-width: ($tablet + 1px)) and (max-width: $large) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media only screen and (min-width: $large + 1px) {
+  @media only screen and (min-width: ($large + 1px)) {
     @content;
   }
 }

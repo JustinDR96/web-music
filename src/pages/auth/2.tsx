@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import { signIn } from "next-auth/react";
 import { useSession } from "next-auth/react";
-import Signup from "./signup";
 import "../../styles/main.scss";
 
 import { useEffect } from "react";
@@ -69,7 +68,6 @@ export default function SignIn() {
               </label>
             </span>
           </form>
-          <Signup />
         </div>
       </div>
     </div>

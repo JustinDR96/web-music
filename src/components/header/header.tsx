@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import SignIn from "../AuthBtn/AuthBtn";
+import DarkBtn from "../DarkMode/darkBtn";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -58,6 +59,7 @@ export default function Header() {
 
       {isOpen && (
         <div className="menu-hamburger">
+          <DarkBtn />
           <ul>
             <li>
               <a href="/link1">Home</a>
