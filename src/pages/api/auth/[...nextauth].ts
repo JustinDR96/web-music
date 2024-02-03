@@ -43,7 +43,6 @@ export default NextAuth({
 
         if (user) {
           // Retournez un objet utilisateur avec les champs id et username
-          console.log("user", user);
           return { id: user.id, username: user.username };
         } else {
           // Si l'utilisateur n'est pas trouvé ou si les informations d'identification sont incorrectes, retournez null
@@ -57,7 +56,9 @@ export default NextAuth({
       session: { user: { username: any } },
       user: { username: any }
     ) => {
-      session.user.username = user.username;
+      if (user) {
+        session.user.username = user.username;
+      }
       console.log("session", session);
       return Promise.resolve(session);
     },
