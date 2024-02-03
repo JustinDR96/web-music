@@ -11,19 +11,29 @@ export default NextAuth({
         password: { label: "Password", type: "password" },
       },
       authorize: async (credentials) => {
-        const user = { id: "1", name: "root", password: "root" };
-
-        if (user) {
-          return user;
+        if (
+          credentials &&
+          typeof credentials.username === "string" &&
+          credentials.username === "root" &&
+          typeof credentials.password === "string" &&
+          credentials.password === "root"
+        ) {
+          const user = {
+            id: "1",
+            name: "root",
+            email: "root@example.com",
+            password: "root",
+          };
+          return Promise.resolve(user);
         } else {
-          return null;
+          return Promise.resolve(null);
         }
       },
     }),
   ],
-  database: process.env.DATABASE_URL,
-  session: {
-    jwt: true,
+  // database: process.env.DATABASE_URL,
+  jwt: {
+    secret: process.env.SECRET,
   },
   pages: {
     signIn: "/auth/signin",

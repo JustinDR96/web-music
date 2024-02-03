@@ -1,12 +1,25 @@
 /* eslint-disable react/no-unescaped-entities */
 import { signIn } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import "../../styles/main.scss";
 import Welcome from "../../components/welcome/welcome";
+import { useEffect } from "react";
 
 export default function SignIn() {
+  const { data: session, status } = useSession();
+  const loading = status === "loading";
+
+  useEffect(() => {
+    if (!loading) {
+      if (session) {
+        console.log("Connexion réussie");
+      } else {
+        console.log("Échec de la connexion");
+      }
+    }
+  }, [session, loading]);
   return (
     <div className="signin">
-      <Welcome />
       <div className="container">
         <input type="checkbox" id="register_toggle" />
         <div className="slider">
@@ -22,6 +35,7 @@ export default function SignIn() {
               signIn("credentials", {
                 username,
                 password,
+                callbackUrl: "/",
               });
             }}
           >
@@ -39,16 +53,7 @@ export default function SignIn() {
               />
               <label className="label">Password</label>
             </div>
-            <button
-              onClick={() =>
-                signIn("credentials", {
-                  username: "username",
-                  password: "password",
-                })
-              }
-            >
-              Login
-            </button>
+            <button type="submit">Login</button>
 
             <span className="bottom_text">
               Don't have an account?
