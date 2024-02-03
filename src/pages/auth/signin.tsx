@@ -37,6 +37,7 @@ export default function SignIn() {
                 password,
                 callbackUrl: "/",
               });
+              console.log("bien connecté");
             }}
           >
             <span className="title">Login</span>

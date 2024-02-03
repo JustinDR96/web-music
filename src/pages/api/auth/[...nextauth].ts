@@ -11,13 +11,7 @@ export default NextAuth({
         password: { label: "Password", type: "password" },
       },
       authorize: async (credentials) => {
-        if (
-          credentials &&
-          typeof credentials.username === "string" &&
-          credentials.username === "root" &&
-          typeof credentials.password === "string" &&
-          credentials.password === "root"
-        ) {
+        {
           const user = {
             id: "1",
             name: "root",
@@ -25,8 +19,6 @@ export default NextAuth({
             password: "root",
           };
           return Promise.resolve(user);
-        } else {
-          return Promise.resolve(null);
         }
       },
     }),
