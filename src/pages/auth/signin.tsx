@@ -2,7 +2,7 @@
 import { signIn } from "next-auth/react";
 import { useSession } from "next-auth/react";
 import "../../styles/main.scss";
-import Welcome from "../../components/welcome/welcome";
+
 import { useEffect } from "react";
 
 export default function SignIn() {

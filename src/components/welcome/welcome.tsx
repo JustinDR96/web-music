@@ -6,6 +6,6 @@ export default function Welcome() {
   if (session) {
     return <p>Bienvenue, {session.user?.name ?? "Unknown User"}!</p>;
   } else {
-    return <p>Vous n'êtes pas connecté.</p>;
+    return <p>not connect</p>;
   }
 }
