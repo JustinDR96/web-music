@@ -1,11 +1,8 @@
-const { Client } = require("pg");
+const [Client] = [require("pg").Client];
 
 async function testDbConnection() {
   const client = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-      rejectUnauthorized: false,
-    },
+    connectionString: process.env.POSTGRES_URL,
   });
 
   try {
