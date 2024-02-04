@@ -1,0 +1,22 @@
+.welcome {
+  height: 80px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-size: 27px;
+  h1 {
+    animation: slideInFromLeft 1s ease-in-out;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

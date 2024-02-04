@@ -9,7 +9,10 @@
 @import "../components/header/header";
 @import "../components/categories/categories";
 @import "../components/AuthBtn/AuthBtn";
-@import "../components/DarkMode/darkBtn.scss";
+@import "../components/DarkMode/darkBtn";
+@import "../components/welcome/welcome";
+
+
 // Importer les styles spécifiques aux pages
 @import "../pages/home/home";
 

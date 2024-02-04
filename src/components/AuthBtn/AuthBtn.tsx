@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import Link from "next/link";
-import { signOut } from "next-auth/react";
+import { signIn, signOut } from "next-auth/react";
 
 export default function AuthBtn() {
   const handleSignOut = () => {
@@ -8,12 +8,19 @@ export default function AuthBtn() {
     console.log("Bien déconnecté");
   };
 
+  const handleSignIn = () => {
+    signIn();
+    console.log("Bien connecté");
+  };
+
   return (
     <div className="authbtn">
-      <button className="connect">
-        <Link href="/api/auth/signin">Se connecter</Link>
+      <button className="connect" onClick={handleSignIn}>
+        Se connecter
       </button>
+
       <button className="register">S'inscrire</button>
+      
       <button className="logout" onClick={() => handleSignOut()}>
         Se deconnecter
       </button>

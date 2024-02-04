@@ -2,17 +2,16 @@ import React from "react";
 import Categories from "../components/categories/categories";
 import { options } from "./api/auth/[...nextauth]/options";
 import { getServerSession } from "next-auth";
+import Welcome from "@/components/welcome/welcome";
 
 export default async function Home() {
   const session = await getServerSession(options);
-
+  const user = session?.user;
   return (
-    <>
-      {session ? <h1>Session</h1> : <h1>pas Session</h1>}
-      <div className="home">
-        <h1>Home</h1>
-        <Categories />
-      </div>
-    </>
+    <div className="home">
+      <Welcome />
+      <h1>Home</h1>
+      <Categories />
+    </div>
   );
 }
