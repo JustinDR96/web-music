@@ -1,0 +1,10 @@
+.footer {
+  width: 100%;
+  min-height: 80px;
+  display: flex;
+  padding: 5px;
+  border-radius: 20px;
+  box-shadow: var(--box-shadow);
+  position: sticky;
+  top: 100%;
+}

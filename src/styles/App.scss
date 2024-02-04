@@ -9,17 +9,18 @@
   box-sizing: border-box;
 }
 
-body,
-html {
+body {
   max-width: 1440px;
-  min-height: 100vh;
+  height: 100vh;
   margin: 0 auto;
-
+  overflow: auto;
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   color: var(--text-color);
   background: var(--body-bg);
-  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .page {

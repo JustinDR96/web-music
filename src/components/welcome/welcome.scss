@@ -4,6 +4,15 @@
   display: flex;
   align-items: center;
   font-size: 27px;
+  .connect {
+    display: flex;
+    align-items: center;
+    animation: slideInFromLeft 1s ease-in-out;
+    gap: 5px;
+    img {
+      border-radius: 50%;
+    }
+  }
   h1 {
     animation: slideInFromLeft 1s ease-in-out;
   }
