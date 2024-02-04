@@ -1,7 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useState } from "react";
 import SignIn from "../AuthBtn/AuthBtn";
 import DarkBtn from "../DarkMode/darkBtn";
+import Link from "next/link";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,7 +45,11 @@ export default function Header() {
         )}
       </div>
 
-      <div className="header-title">Cyber Groove</div>
+      <div className="header-hero">
+        <Link href="/home">
+          <img src="/images/logo/CB-removebg.png" alt="" />
+        </Link>
+      </div>
 
       <div className="user-icon" onClick={toggleVisible}>
         <svg
