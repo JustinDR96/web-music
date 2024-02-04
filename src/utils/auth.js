@@ -13,7 +13,7 @@ export async function getAccessToken() {
         },
       }
     );
-    
+
     return response.data.access_token;
   } catch (error) {
     console.error("Error getting access token:", error);

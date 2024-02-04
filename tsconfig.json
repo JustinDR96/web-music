@@ -35,7 +35,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/pages/api/dbTest.ts",
+    "src/app/api/dbTest.ts",
     "node_modules/@types"
   ],
   "exclude": [
